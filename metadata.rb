@@ -1,5 +1,5 @@
 name             'clamav'
-maintainer       'Goncalo Pereira'
+maintainer       'Goncalo  Pereira'
 maintainer_email 'goncalo.pereira@digitaslbi.com'
 license          'All rights reserved'
 description      'Installs/Configures clamav'
