@@ -1,3 +1,5 @@
+include_recipe 'yum-epel'
+
 yum_package 'clamav'
 
 user 'clam' do
