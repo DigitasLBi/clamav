@@ -2,11 +2,23 @@ include_recipe 'yum-epel'
 
 yum_package 'clamav'
 
+yum_package 'clamav-update' unless node["platform_version"].to_f < 7.0 
+
 user 'clam' do
 	system true
 	shell "/bin/bash"
 	action :create
 end
+
+directory "/var/log/clamav" do
+	owner 'clam'
+	action :create
+end
+
+# template "/etc/freshclam.conf" do
+#   source "freshclam.conf.erb"
+#   action :create
+# end
 
 file "/var/log/clamav/freshclam.log" do
 	owner 'clam'
