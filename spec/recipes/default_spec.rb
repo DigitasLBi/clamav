@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require 'spec_helper'
 
 describe 'clamav::default' do
 
@@ -22,10 +22,6 @@ describe 'clamav::default' do
 
   it "create log directory" do
     expect(clamav_run).to create_directory('/var/log/clamav').with(owner: 'clam')
-  end
-
-  it "creates template for freshclam conf" do
-    expect(clamav_run).to create_template('/etc/freshclam.conf')
   end
 
   it "create user necessary to run clamav/use database" do
